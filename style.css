@@ -10,6 +10,9 @@
 body {
     background-image: url("background.avif");
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* Ensures the background stays fixed while scrolling */
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
@@ -330,8 +333,10 @@ nav input {
 }
 
 .body-text div {
-    font-size: 45px;
+    font-size: 5vw;
+    /* Scales the font size relative to the viewport width */
     font-weight: 600;
+    color: #3A3B3C;
 }
 
 .cloud {
@@ -347,10 +352,29 @@ nav input {
 
 @keyframes animate {
     0% {
-        background-position: 0px;
+        background-position: 0vw;
     }
 
     100% {
-        background-position: 6000px
+        background-position: 200vw;
+        /* This will scale with the viewport width */
+    }
+}
+
+
+/* Your existing styles here... */
+
+@media screen and (max-width: 480px) {
+    .wrapper .nav-links li a {
+        font-size: 16px;
+    }
+
+    .body-text div {
+        font-size: 8vw;
+        /* Adjust the size for smaller screens */
+    }
+
+    nav .wrapper {
+        padding: 0 15px;
     }
 }
