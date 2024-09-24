@@ -11,7 +11,7 @@ body {
     background-image: url("background.avif");
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-repeat: no-repeat;
     /* Ensures the background stays fixed while scrolling */
 }
 
@@ -365,16 +365,22 @@ nav input {
 /* Your existing styles here... */
 
 @media screen and (max-width: 480px) {
-    .wrapper .nav-links li a {
-        font-size: 16px;
+    body {
+        background-size: contain;
+        /* On small screens, contain ensures the full image is visible */
+        background-position: top center;
+        /* Adjust positioning for mobile */
+        background-attachment: scroll;
+        /* Removes fixed attachment for better mobile support */
     }
 
     .body-text div {
         font-size: 8vw;
-        /* Adjust the size for smaller screens */
+        /* Ensures body text scales properly on small screens */
     }
 
     nav .wrapper {
         padding: 0 15px;
+        /* Adjust padding for nav on smaller screens */
     }
 }
