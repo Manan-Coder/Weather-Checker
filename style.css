@@ -10,9 +10,7 @@
 body {
     background-image: url("background.avif");
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    /* Ensures the background stays fixed while scrolling */
+    overflow: auto;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
@@ -334,7 +332,6 @@ nav input {
 
 .body-text div {
     font-size: 5vw;
-    /* Scales the font size relative to the viewport width */
     font-weight: 600;
     color: #3A3B3C;
 }
@@ -347,40 +344,97 @@ nav input {
     height: 100%;
     background-image: url("cloud.png");
     animation: animate 60s linear infinite;
+    z-index: 2;
+    pointer-events: none;
 }
 
 
 @keyframes animate {
     0% {
-        background-position: 0vw;
+        background-position: 0px;
     }
 
     100% {
-        background-position: 200vw;
-        /* This will scale with the viewport width */
+        background-position: 6000px
     }
 }
 
 
-/* Your existing styles here... */
 
-@media screen and (max-width: 480px) {
-    body {
-        background-size: contain;
-        /* On small screens, contain ensures the full image is visible */
-        background-position: top center;
-        /* Adjust positioning for mobile */
-        background-attachment: scroll;
-        /* Removes fixed attachment for better mobile support */
+.text {
+    font-size: 40px;
+}
+
+.lets-button {
+    font-size: 50px;
+    margin-top: 520px;
+    margin-left: 650px;
+    border-radius: 60px;
+    width: 300px;
+    text-align: center;
+    background-color: rgb(255, 200, 4);
+    cursor: pointer;
+    z-index: 1;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Arima+Madurai:300');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: 'Arima Madurai', cursive;
+    color: black;
+    font-size: 4rem;
+    letter-spacing: -3px;
+    text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.6);
+    position: relative;
+    z-index: 3;
+}
+
+.container {
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /*min-height: 35rem;*/
+    background-blend-mode: soft-light;
+    background-size: cover;
+    background-position: center center;
+    padding: 2rem;
+}
+
+.bird {
+    background-size: auto 100%;
+    width: 352px;
+    height: 500px;
+    will-change: background-position;
+
+    animation-name: fly-cycle;
+    animation-duration: 1s;
+    animation-delay: -0.5s;
+    animation-timing-function: steps(10);
+    animation-iteration-count: infinite;
+}
+
+.bird-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    will-change: transform;
+}
+
+@keyframes fly-cycle {
+
+    100% {
+        background-position: -3600px 0;
     }
 
-    .body-text div {
-        font-size: 8vw;
-        /* Ensures body text scales properly on small screens */
-    }
-
-    nav .wrapper {
-        padding: 0 15px;
-        /* Adjust padding for nav on smaller screens */
-    }
 }
