@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    max-zoom: 80%;
 }
 
 body {
@@ -324,7 +325,7 @@ nav input {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.8);
     width: 100%;
     text-align: center;
     padding: 0 30px;
@@ -337,6 +338,7 @@ nav input {
 }
 
 .cloud {
+    filter: blur(10px);
     position: absolute;
     top: 0;
     left: 0;
@@ -603,4 +605,80 @@ h1 {
         transform: translateY(0vh) translateX(110vw) scale(0.45);
     }
 
+}
+
+
+
+
+*:focus {
+    outline: none;
+}
+
+.cloud-back {
+    filter: blur(2px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("cloud.png");
+    animation: animate 60s linear infinite;
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+@keyframes animate {
+    0% {
+        background-position: 0px;
+    }
+
+    100% {
+        background-position: 6000px
+    }
+}
+
+/* Container for the input and button */
+.city-container {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 420px;
+    /* Adjust the width to fit both input and button */
+    background-color: #242526;
+    border-radius: 5px;
+    border: 2px solid #242526;
+    height: 40px;
+    z-index: 5;
+    display: flex;
+    /* Use flexbox to align input and button */
+    align-items: center;
+    /* Center both vertically */
+    padding: 0 10px;
+    justify-content: space-between;
+    /* Ensure input and button align properly */
+}
+
+.city {
+    color: whitesmoke;
+    width: 80%;
+    /* Allow the input to take up most of the space */
+    background-color: #242526;
+    border: none;
+    height: 30px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+
+.search-button {
+    width: 18%;
+    /* Adjust the width of the button */
+    border-radius: 20px;
+    background-color: #242526;
+    border: 2px solid #242526;
+    color: whitesmoke;
+    cursor: pointer;
+    text-align: center;
+    height: 30px;
 }

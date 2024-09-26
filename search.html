@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KnowYourTemp</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 
 <body>
@@ -20,33 +19,26 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li>
-                    <a href="search.html">Search City</a>
+                    <a href="#" class="desktop-item">Dropdown Menu</a>
+                    <input type="checkbox" id="showDrop">
+                    <label for="showDrop" class="mobile-item">Dropdown Menu</label>
+                    <ul class="drop-menu">
+                        <li><a href="#">Drop menu 1</a></li>
+                        <li><a href="#">Drop menu 2</a></li>
+                        <li><a href="#">Drop menu 3</a></li>
+                        <li><a href="#">Drop menu 4</a></li>
+                    </ul>
                 </li>
 
-                <li><a href="feedback.html ">Feedback</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
             </ul>
             <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
         </div>
     </nav>
-    <div class="body-text">
-        <div class="title">Get weather data of cities all around the world </div>
-
-    </div>
     <div class="cloud"></div>
-    <div class="cloud-back"></div>
-    <div class="button-container">
-        <a href="search.html">
-            <button class="lets-button">Let's Go</button></a>
-    </div>
-    <div class="bird-container bird-container--one">
-    </div>
-
-    <!-- Flying Bird 2 -->
-    <div class="bird-container bird-container--two">
-    </div>
-
-    <!-- Flying Bird 3 -->
-    <div class="bird-container bird-container--three">
+    <div class="city-container">
+        <input placeholder="Enter the name of the city" class="city" id="city-input">
+        <button class="search-button" id="srch-button">Search</button>
     </div>
 </body>
 

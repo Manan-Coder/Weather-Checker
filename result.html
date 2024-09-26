@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="wrapper">
+            <div class="logo"><a href="#">MyWeatherApp</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="results-container">
+        <div class="result-card">
+            <h2>City: <span id="city">Loading...</span></h2>
+            <p>State: <span id="state">Loading...</span></p>
+            <p>Country: <span id="country">Loading...</span></p>
+            <p>Temperature: <span id="temperature">Loading...</span> °C</p>
+            <p> <span id="temperature_f">Loading...</span> F</p>
+            <p>AQI: <span id="aqi">Loading...</span></p>
+            <p>Local Time: <span id="localtime">Loading...</span></p>
+            <p>Day/Night: <span id="daynight">Loading...</span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <div class="cloud"></div>
+</body>
+
+</html>
